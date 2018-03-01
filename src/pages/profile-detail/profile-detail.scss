@@ -1,0 +1,24 @@
+page-profile-detail {
+    .bg-color {
+        background-color: #eee;
+    }
+
+    .top {
+        margin-top: 20px;
+    }
+
+    .portrait {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .gray-text {
+        color: gray;
+        font-size: 0.8em;
+    }
+}

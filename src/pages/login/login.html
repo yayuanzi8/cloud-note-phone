@@ -1,0 +1,21 @@
+<ion-content>
+    <ion-item>
+      <ion-label inset>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label inset>
+        <ion-icon name="lock"></ion-icon>
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+  <div style="text-align: center; margin-left: 20%; margin-right: 20%;">
+    <button ion-button block color="primary" (click)="login()">
+      登录
+    </button>
+  </div>
+</ion-content>

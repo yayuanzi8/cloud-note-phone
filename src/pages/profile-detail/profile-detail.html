@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary"></ion-navbar>
+</ion-header>
+<ion-content class="bg-color" *ngIf="user">
+    <ion-list>
+      <ion-item class="center">
+        <img class="portrait" (tap)="selectPortrait()" [src]="user.portrait"/>
+        <p>{{user.username}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines>
+      <button ion-item>
+          用户名
+          <span class="gray-text" item-end>{{user.username}}</span>
+      </button>
+      <button ion-item (tap)="toChangeEmailModal()">
+          邮箱
+          <span class="gray-text" item-end>{{user.email}}</span>
+      </button>
+      <button ion-item>
+          注册时间
+          <span class="gray-text" item-end>{{user.registerTime|date:'yyyy/MM/dd'}}</span>
+      </button>
+    </ion-list>
+    <div style="text-align: center; margin-left: 20px; margin-right: 20px;margin-top: 30px;">
+        <button ion-button block (tap)="toChangePswModal()" color="primary">
+            修改密码
+        </button>
+    </div>
+    <div style="text-align: center; margin-left: 20px; margin-right: 20px;margin-top: 10px;">
+        <button ion-button block color="danger" (tap)="logout()">
+            退出登录
+        </button>
+    </div>
+</ion-content>

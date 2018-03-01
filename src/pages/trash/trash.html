@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="refreshTrashList($event)">
+    <ion-refresher-content
+        pullingIcon="arrow-down"
+        refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let r of rubbishes">
+        <ion-item>
+            <ion-icon item-start [name]="r.file.type=='directory'?'folder':'document'"></ion-icon>
+            <h2>{{r.file.type=='directory'?r.file.dirName:r.file.title}}</h2>
+        </ion-item>
+        <ion-item-options side="right">
+            <button ion-button icon-only outline color="danger" (tap)="recover(r)">
+                <ion-icon name="paper-plane"></ion-icon>
+            </button>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-list>
+</ion-content>

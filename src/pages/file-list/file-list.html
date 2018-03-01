@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-buttons end>
+            <button ion-button icon-only (tap)="openCreatePopover($event)">
+              <ion-icon name="more"></ion-icon>
+            </button>
+          </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-refresher (ionRefresh)="refreshFileList($event)">
+            <ion-refresher-content
+                pullingIcon="arrow-down"
+                refreshingSpinner="circles">
+            </ion-refresher-content>
+    </ion-refresher>
+    <ion-list no-lines>
+        <!-- <button *ngFor="let file of fileList" ion-item (swipe)="swipeToDelete(file,$event)" (tap)="tapToNextPage(file,$event)">
+                <ion-icon [name]="file.type=='directory'?'folder':'document'"></ion-icon>&nbsp;
+                {{file.type=='directory'?file.dirName:file.title}}
+        </button> -->
+        <ion-item-sliding *ngFor="let file of fileList">
+            <ion-item (tap)="tapToNextPage(file,$event)">
+              <ion-icon item-start [name]="file.type=='directory'?'folder':'document'"></ion-icon>
+              <h2>{{file.type=='directory'?file.dirName:file.title}}</h2>
+            </ion-item>
+            <ion-item-options side="right">
+              <button *ngIf="file.type=='note'" (tap)="share(file)" ion-button icon-only outline color="secondary">
+                <ion-icon name="share"></ion-icon>
+              </button>
+              <button ion-button icon-only (tap)="moveToTrash(file)" outline color="primary">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+              <button ion-button icon-only (tap)="swipeToDelete(file,$event)" outline color="danger">
+                <ion-icon name="remove-circle"></ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+    </ion-list>
+</ion-content>

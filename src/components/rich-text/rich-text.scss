@@ -1,0 +1,38 @@
+rich-text {
+    [contenteditable=true] {
+        -webkit-user-select: auto !important;
+        padding: 2px;
+        margin: 5px 1px 0;
+        border: none;
+        border-bottom: solid 1px lightblue;
+        overflow:scroll;
+        word-wrap: normal;
+        height: 80vh;
+        cursor: text;
+        img {
+            padding-left: 2px;
+            max-width: 95%;
+        }
+        background-color: #fff;
+        &:empty:before {
+            content: attr(data-placeholder-text);
+            display: block;
+            color: lightgrey;
+            font-weight: bold;
+        }
+    }
+    .decorator {
+        background: white;
+        margin: 5px 1px 5px 1px;
+        text-align: left;
+        button {
+            background: white;
+            color: #000;
+            font-size: 1.1em;
+            height: 35px;
+            min-width: 30px;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+    }
+}

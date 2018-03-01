@@ -1,0 +1,80 @@
+<div #styler>
+
+</div>
+
+<div #editor contenteditable="true" class="maineditor" tappable [attr.data-placeholder-text]="getPlaceholderText()">
+</div>
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand -->
+<!-- <ion-scroll scrollX="true" scrollY="false" style="height:54px;width:5000px;">
+    <div #decorate class="decorator">
+        <button data-command="bold"><strong>B</strong></button>
+        <button data-command="italic"><i>I</i></button>
+        <button data-command="underline"><u>U</u></button> &nbsp;
+        <button data-command="fontSize|6"><span style="font-size: 1.5em;">A</span></button>
+        <button data-command="removeFormat"><span style="font-size: 1.0em;">A</span></button>
+        <button data-command="fontSize|1"><span style="font-size: 0.6em;">A</span></button> &nbsp;
+        <button data-command="formatBlock|<h1>">H1</button>
+        <button data-command="formatBlock|<h2>">H2</button>
+        <button data-command="formatBlock|<p>">Normal</button> &nbsp;
+        <button data-command="justifyLeft">Left</button>
+        <button data-command="justifyCenter">Center</button>
+        <button data-command="justifyRight">Right</button>
+        <button data-command="justifyFull">Full</button> &nbsp;
+        <button data-command="insertHorizontalRule">HR</button>
+        <button data-command="insertOrderedList">OL</button>
+        <button data-command="insertUnorderedList">UL</button>
+    </div>
+</ion-scroll> -->
+<div #decorate class="decorator">
+    <ion-slides class="slide-title" [slidesPerView]="8" [pager]="false">
+        <ion-slide>
+            <button data-command="bold"><strong>B</strong></button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="italic"><i>I</i></button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="underline"><u>U</u></button> &nbsp;
+        </ion-slide>
+        <ion-slide>
+            <button data-command="fontSize|6"><span style="font-size: 1.5em;">A</span></button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="removeFormat"><span style="font-size: 1.0em;">A</span></button>
+        </ion-slide>
+        <ion-slide>
+                <button data-command="fontSize|1"><span style="font-size: 0.6em;">A</span></button> &nbsp;
+        </ion-slide>
+        <ion-slide>
+            <button data-command="formatBlock|<h1>">H1</button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="formatBlock|<h2>">H2</button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="formatBlock|<p>">N</button> &nbsp;
+        </ion-slide>
+        <ion-slide>
+            <button data-command="justifyLeft">L</button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="justifyCenter">C</button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="justifyRight">R</button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="justifyFull">Full</button> &nbsp;
+        </ion-slide>
+        <ion-slide>
+            <button data-command="insertHorizontalRule">HR</button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="insertOrderedList">OL</button>
+        </ion-slide>
+        <ion-slide>
+            <button data-command="insertUnorderedList">UL</button>
+        </ion-slide>
+    </ion-slides>
+</div>

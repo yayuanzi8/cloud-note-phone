@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar color="primary"></ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-refresher (ionRefresh)="refreshShareNote($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-down"
+            refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-card *ngIf="shareNote">
+        <ion-card-header style="font-size: 2em;">{{shareNote.title}}</ion-card-header>
+        <ion-card-content [innerHTML]="shareNote.content"></ion-card-content>
+    </ion-card>
+</ion-content>

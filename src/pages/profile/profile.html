@@ -1,0 +1,37 @@
+<!-- <ion-header>
+    <ion-navbar color="primary"></ion-navbar>
+</ion-header> -->
+<ion-content class="bg-color" *ngIf="user">
+    <ion-refresher (ionRefresh)="refreshUserInfo($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-down"
+            refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-list class="top">
+        <button ion-item (tap)="toUserDetails()">
+          <ion-avatar item-left>
+            <img [src]="user.portrait==null||user.portrait==''?'../../assets/imgs/logo.png':user.portrait"/>
+          </ion-avatar>
+          <h2>{{user.username}}</h2>
+          <p>{{user.registerTime|date:'yyyy/MM/dd'}}</p>
+        </button>
+    </ion-list>
+
+    <ion-list>
+        <button ion-item>
+            版本号
+            <span  item-end>V1.0</span>
+        </button>
+        <button ion-item>
+            关于
+        </button>
+    </ion-list>
+
+    <div style="text-align: center; margin-left: 30px; margin-right: 30px;margin-top: 30px;">
+        <button ion-button block color="danger" (tap)="logout()">
+            退出登录
+        </button>
+    </div>
+
+</ion-content>

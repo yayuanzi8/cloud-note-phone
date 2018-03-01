@@ -1,0 +1,8 @@
+{
+  "name": "cloud-note-phone",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

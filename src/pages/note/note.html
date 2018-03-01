@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-input *ngIf="note!=null" style="color:black;background-color: white;border-radius: 5px;" type="text" [(ngModel)]="note.title"></ion-input>
+    <!-- <ion-title>{{note?.title}}</ion-title> -->
+    <ion-buttons *ngIf="note!=null" end>
+      <button ion-button icon-only (tap)="saveNote()">
+          <ion-icon name="done-all"></ion-icon>
+      </button>
+      <button ion-button icon-only (tap)="openFuncPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content has-bouncing="false">
+  <!-- <textarea id="mobile-editor"></textarea> -->
+  <rich-text *ngIf='note!=null' [formControlItem]="item"></rich-text>
+</ion-content>
